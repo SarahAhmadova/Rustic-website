@@ -9,6 +9,30 @@ a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: calc(2rem + 1.8vw) !important;
+  }
+  h2 {
+    font-size: calc(1rem + 1.8vw) !important;
+  }
+  h5 {
+    font-size: calc(1rem + 1vw) !important;
+  }
+  #testimonial {
+    padding-bottom: 0 !important;
+  }
+  #testimonial #client-slide .owl-nav {
+    top: -125px !important;
+  }
+  #testimonial #client-slide .owl-nav button span {
+    font-size: 50px !important;
+  }
+  #pricing .item {
+    border: 1px solid #e6e9ec;
+  }
+}
+
 body* {
   font-family: "Inter", serif;
 }
@@ -168,8 +192,80 @@ body header .navbar .navbar-nav li .inner-menu.inner-menu-active {
   visibility: visible;
 }
 
-body header .langs {
+body header #sidebar {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  -webkit-transition: .7s;
+  transition: .7s;
+  bottom: 0;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.623);
+  z-index: 7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body header #sidebar .side-menu {
+  width: 290px;
+  background-color: #fff;
+}
+
+body header #sidebar .side-menu .close-btn {
+  position: absolute;
+  right: 25px;
+  top: 35px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+body header #sidebar .side-menu .close-btn span {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+body header #sidebar .side-menu .close-btn span::before, body header #sidebar .side-menu .close-btn span::after {
+  content: "";
+  height: 25px;
+  width: 1px;
+  background-color: #555;
+  position: absolute;
+  top: 0;
+  left: 15px;
+}
+
+body header #sidebar .side-menu .close-btn span::before {
+  -webkit-transform: rotate(43deg);
+          transform: rotate(43deg);
+}
+
+body header #sidebar .side-menu .close-btn span::after {
+  -webkit-transform: rotate(-43deg);
+          transform: rotate(-43deg);
+}
+
+body header #sidebar .side-menu ul li a {
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  color: #000;
+}
+
+body header #sidebar .side-menu ul li a span::before {
+  font-size: 10px;
+}
+
+body header #sidebar .side-menu ul.inner-menu {
+  display: none;
+}
+
+body header .langs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -359,6 +455,135 @@ body #home .owl-carousel .owl-dots button span {
 
 body #home .owl-carousel .owl-dots button.active span {
   background-color: white;
+}
+
+body #home .down-about {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  margin: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+body #home .down-about .down-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 10px;
+  width: 30px;
+  margin: auto;
+}
+
+body #home .down-about .down-icon:first-child {
+  -webkit-animation: down1 1s infinite;
+          animation: down1 1s infinite;
+}
+
+body #home .down-about .down-icon:nth-child(2) {
+  -webkit-animation: down2 1s infinite;
+          animation: down2 1s infinite;
+}
+
+body #home .down-about .down-icon:last-child {
+  -webkit-animation: down3 1s infinite;
+          animation: down3 1s infinite;
+}
+
+body #home .down-about .down-icon::before, body #home .down-about .down-icon::after {
+  content: "";
+  background-color: blanchedalmond;
+  position: absolute;
+  height: 5px;
+  width: 18px;
+}
+
+body #home .down-about .down-icon::before {
+  -webkit-transform: translateX(70%) rotate(-35deg);
+          transform: translateX(70%) rotate(-35deg);
+}
+
+body #home .down-about .down-icon::after {
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+}
+
+@-webkit-keyframes down1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    margin-top: -10px;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    margin-top: 0px;
+  }
+}
+
+@keyframes down1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    margin-top: -10px;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    margin-top: 0px;
+  }
+}
+
+@-webkit-keyframes down2 {
+  0% {
+    margin-top: -3px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+@keyframes down2 {
+  0% {
+    margin-top: -3px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+@-webkit-keyframes down3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    margin-top: -5px;
+  }
+}
+
+@keyframes down3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    margin-top: -5px;
+  }
 }
 
 body #services {
@@ -652,10 +877,6 @@ body #pricing .item {
   100% {
     margin-top: 0px;
   }
-}
-
-body #pricing .form-switch input:checked .item {
-  color: red;
 }
 
 body #pricing .info {

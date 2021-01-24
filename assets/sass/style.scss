@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Inter:wght@400;500;600&display=swap');
-@import "_reset";
+@import "reset";
+@import "media-size";
 
 body {
     &* {
         font-family: "Inter", serif;
     }
-
+    
     header {
         z-index: 3;
         height: 0;
@@ -165,8 +166,79 @@ body {
             }
         }
 
-        .langs {
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            transition: .7s;
+            bottom: 0;
             width: 100%;
+            background-color: rgba(0, 0, 0, 0.623);
+            z-index: 7;
+            display: flex;
+            justify-content: flex-end;
+
+            .side-menu {
+                width: 290px;
+                background-color: #fff;
+
+                .close-btn {
+                    position: absolute;
+                    right: 25px;
+                    top: 35px;
+                    height: 30px;
+                    width: 30px;
+                    cursor: pointer;
+
+                    span {
+                        height: 100%;
+                        width: 100%;
+                        display: inline-block;
+                        position: relative;
+
+                        &::before,
+                        &::after {
+                            content: "";
+                            height: 25px;
+                            width: 1px;
+                            background-color: #555;
+                            position: absolute;
+                            top: 0;
+                            left: 15px;
+                        }
+
+                        &::before {
+                            transform: rotate(43deg);
+                        }
+
+                        &::after {
+                            transform: rotate(-43deg);
+                        }
+                    }
+                }
+
+                ul {
+                    li {
+                        a {
+                            text-transform: uppercase;
+                            padding: 1rem 2rem;
+                            color: #000;
+
+                            span::before {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+
+                    &.inner-menu {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .langs {
+            // width: 60%;
             display: flex;
             justify-content: flex-end;
 
@@ -305,6 +377,11 @@ body {
                     }
                 }
 
+
+
+
+
+
             }
 
             .owl-dots {
@@ -332,6 +409,87 @@ body {
                         }
                     }
                 }
+            }
+        }
+
+        .down-about {
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+            margin: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .down-icon {
+                display: flex;
+                position: relative;
+                height: 10px;
+                width: 30px;
+                margin: auto;
+                &:first-child{
+                    animation: down1 1s infinite;
+                }
+                &:nth-child(2){
+                    animation: down2 1s infinite;
+                }
+                &:last-child{
+                    animation: down3 1s infinite;
+                }
+                &::before,
+                &::after {
+                    content: "";
+                    background-color: blanchedalmond;
+                    position: absolute;
+                    height: 5px;
+                    width: 18px;
+                }
+
+                &::before {
+                    transform: translateX(70%) rotate(-35deg);
+                }
+
+                &::after {
+                    transform: rotate(35deg);
+                }
+            }
+
+        }
+
+        @keyframes down1 {
+            0% {
+                opacity: 0;
+                transform: scale(.5);
+                margin-top: -10px;
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                margin-top: 0px;
+            }
+        }
+
+        @keyframes down2 {
+            0% {
+                margin-top: -3px;
+            }
+
+            100% {
+                margin-top: 0;
+            }
+        }
+
+        @keyframes down3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(.5);
+                margin-top: -5px;
             }
         }
     }
@@ -591,11 +749,6 @@ body {
                 }
             }
         }
-
-        .form-switch input:checked .item {
-            color: red;
-        }
-
         .info {
             font-family: "Inter", sans-serif;
 
@@ -929,30 +1082,37 @@ body {
                     text-transform: uppercase;
                 }
             }
-            .nav{
-                li{
+
+            .nav {
+                li {
                     margin: 0px 6px;
-                    a{
+
+                    a {
                         color: #000000;
                         font-size: 14px;
                         text-transform: uppercase;
                         transition: .7s;
-                        &:hover{
+
+                        &:hover {
                             color: #3c84d1;
                         }
                     }
                 }
             }
-            .lang{
-                ul{
+
+            .lang {
+                ul {
                     display: flex;
-                    li{
+
+                    li {
                         margin-left: 30px;
-                        a{
+
+                        a {
                             color: #8d9aa8;
                             font-size: 14px;
                             text-transform: uppercase;
-                            &:hover{
+
+                            &:hover {
                                 color: #000;
                             }
                         }
