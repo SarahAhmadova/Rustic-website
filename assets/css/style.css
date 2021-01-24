@@ -28,8 +28,34 @@ a {
   #testimonial #client-slide .owl-nav button span {
     font-size: 50px !important;
   }
-  #pricing .item {
+  #pricing .row {
+    border: none;
+  }
+  #pricing .row .item {
     border: 1px solid #e6e9ec;
+  }
+}
+
+@media screen and (max-width: 562px) {
+  #editorials .text-box h4 {
+    font-size: calc(.8rem + 1vw) !important;
+  }
+  footer .footer-menu .brand {
+    margin-bottom: 2rem;
+    display: inline-block;
+    margin-left: -1rem;
+  }
+  footer .footer-menu .row {
+    padding: 0 1rem !important;
+  }
+  footer .footer-menu .row .tab ul > li,
+  footer .footer-menu .row .tab a {
+    font-size: 11px !important;
+  }
+  footer .footer-menu .row .tab h3 {
+    line-height: 1.3em;
+    margin-bottom: 18px !important;
+    font-weight: 400;
   }
 }
 
