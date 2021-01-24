@@ -56,7 +56,7 @@ $(document).ready(function () {
         margin: 15,
         responsive: {
             0: {
-                items: 3
+                items: 2
             },
             760: {
                 items: 4
