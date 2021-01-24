@@ -824,6 +824,7 @@ body #about .right .pattern {
   position: absolute;
   top: 20%;
   left: -20px;
+  width: 80%;
 }
 
 body #about .right .img-box {

@@ -239,7 +239,6 @@ body {
         }
 
         .langs {
-            // width: 60%;
             display: flex;
             justify-content: flex-end;
 
@@ -377,12 +376,6 @@ body {
                         font-weight: 400;
                     }
                 }
-
-
-
-
-
-
             }
 
             .owl-dots {
@@ -703,6 +696,7 @@ body {
                 position: absolute;
                 top: 20%;
                 left: -20px;
+                width: 80%;
             }
 
             .img-box {
